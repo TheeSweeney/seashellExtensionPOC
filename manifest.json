@@ -1,12 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "Shop Seashell",
+  "description": "Determines if site user is currently on is paired with Seashell",
   "version": "1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "Shop Seashell"
   },
   "permissions": [
     "activeTab",
