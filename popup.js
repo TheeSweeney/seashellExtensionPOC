@@ -29,6 +29,7 @@ var getCurrentTabUrl = function(callback) {
 }
 
 var partners = ["nike", "macy", "lowe", "itunes", "domino", "sephora", "amazon", "cvs", "bloomingdales", "groupon"]
+//list of partners, will eventually be async call
 
 var partnerCheck = function (url){
   var match = false;
@@ -37,5 +38,18 @@ var partnerCheck = function (url){
   })
   return match;
 }
+//does current url match any of the partners. this is very simple, prime candidate for refactoring
 
-getCurrentTabUrl(partnerCheck)
+var onTabChange = function(){
+  if(getCurrentTabUrl(partnerCheck)){
+    console.log('done')
+    popup.show()
+    //show popup
+  }
+  popup.show()
+  console.log("bot")
+}
+
+onTabChange()
+
+chrome.tabs.onUpdated.addListener(onTabChange);
