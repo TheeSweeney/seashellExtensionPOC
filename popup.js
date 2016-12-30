@@ -28,4 +28,14 @@ var getCurrentTabUrl = function(callback) {
   });
 }
 
-getCurrentTabUrl(console.log)
+var partners = ["nike", "macy", "lowe", "itunes", "domino", "sephora", "amazon", "cvs", "bloomingdales", "groupon"]
+
+var partnerCheck = function (url){
+  var match = false;
+  partners.forEach(function(partner){
+    if(url.includes(partner)) match = true
+  })
+  return match;
+}
+
+getCurrentTabUrl(partnerCheck)
