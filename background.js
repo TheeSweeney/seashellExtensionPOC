@@ -3,12 +3,15 @@ var partners = ["nike", "macy", "lowe", "itunes", "domino", "sephora", "amazon",
 
 var partnerCheck = function (url){
   var match = false;
-  console.log(url)
 
   partners.forEach(function(partner){
     if(url.includes(partner)) match = true
   })
   return match;
+}
+
+var redirect = function(tab){
+  window.location.href = 'google.com'
 }
 
 var check = function(tab_id, data, tab) {
@@ -17,4 +20,9 @@ var check = function(tab_id, data, tab) {
   }
 }
 
+chrome.pageAction.onClicked.addListener(redirect)
+
 chrome.tabs.onUpdated.addListener(check)
+
+
+
